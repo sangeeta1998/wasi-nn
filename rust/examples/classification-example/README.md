@@ -18,6 +18,12 @@ cargo build --features component-model,wasi-nn,wasmtime-wasi-nn/onnx
 ./target/debug/wasmtime run -Snn --dir ../rust/examples/classification-example/fixture/::fixture ../rust/examples/classification-example/target/wasm32-wasip1/debug/classification-component-onnx.wasm
 ```
 
+RUST_LOG=wasi_nn=debug ./target/debug/wasmtime run \
+  -Snn \
+  --dir ../rust/examples/classification-example/fixture/::fixture \
+  ../rust/examples/classification-example/target/wasm32-wasip1/debug/classification-component-onnx.wasm
+```
+
 You should get the following output:
 ```txt
 Read ONNX model, size in bytes: 4956208
